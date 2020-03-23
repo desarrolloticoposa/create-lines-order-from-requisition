@@ -282,6 +282,16 @@ public class WCreateFromRequisitionUI extends CreateFrom implements EventListene
 					m_orderLine.setPriceActual(rLine.getPriceActual());
 					m_orderLine.setAD_Org_ID(rLine.getAD_Org_ID());
 					m_orderLine.setQty(rLine.getQty());
+					//	Added by Jorge Colmenarez 2020-03-23 11:40
+					//	Add support for Accounting Elements
+					m_orderLine.setC_Project_ID(rLine.get_ValueAsInt("C_Project_ID"));
+					m_orderLine.setC_Activity_ID(rLine.get_ValueAsInt("C_Activity_ID"));
+					m_orderLine.setC_Campaign_ID(rLine.get_ValueAsInt("C_Campaign_ID"));
+					m_orderLine.setAD_OrgTrx_ID(rLine.get_ValueAsInt("AD_OrgTrx_ID"));
+					m_orderLine.setUser1_ID(rLine.get_ValueAsInt("User1_ID"));
+					m_orderLine.setUser2_ID(rLine.get_ValueAsInt("User2_ID"));
+					//	End Jorge Colmenarez
+					
 					m_orderLine.saveEx();
 					
 					//	Update Requisition Line
