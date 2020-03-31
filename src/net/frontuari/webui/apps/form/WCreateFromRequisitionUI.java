@@ -283,6 +283,8 @@ public class WCreateFromRequisitionUI extends CreateFrom implements EventListene
 					m_orderLine.setAD_Org_ID(rLine.getAD_Org_ID());
 					m_orderLine.setQty(rLine.getQty());
 					m_orderLine.setLine(rLine.getLine());
+					m_orderLine.setC_Activity_ID(rLine.get_ValueAsInt("C_Activity_ID"));
+					m_orderLine.setUser1_ID(rLine.get_ValueAsInt("User1_ID"));
 					m_orderLine.saveEx();
 					
 					//	Update Requisition Line
